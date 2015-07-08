@@ -1,0 +1,9 @@
+<ion-view view-title="Studentlists">
+  <ion-content >
+    <ion-list>
+      <ion-item nav-transition="android"  ng-repeat="student in tasks" href="#/app/playlists/{{student.rollNumber}}">
+        {{student.studentName}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
