@@ -1,0 +1,11 @@
+#container {
+    margin: 0px auto;
+    width: 400px;
+    height: 335px;
+    border: 10px #333 solid;
+}
+#videoElement {
+    width: 400px;
+    height: 335px;
+    background-color: #666;
+}
