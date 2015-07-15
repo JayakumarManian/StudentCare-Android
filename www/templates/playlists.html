@@ -1,9 +1,25 @@
-<ion-view view-title="Studentlists">
+<ion-view view-title="Studentlists" >
   <ion-content >
-    <ion-list>
-      <ion-item nav-transition="android"  ng-repeat="student in tasks" href="#/app/playlists/{{student.rollNumber}}">
-        {{student.studentName}}
-      </ion-item>
+<div class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" placeholder="Search">
+  </label>
+  <button class="button button-clear">
+    Cancel
+  </button>
+</div>
+    <ion-list ">
+     <!--  <ion-item nav-transition="android"  ng-repeat="student in tasks| filter:search.value" href="#/app/playlists/{{student.rollNumber}}">   -->
+       <div>
+	  <a class="item item-avatar item-thumbnail-left" nav-transition="android"  ng-repeat="student in tasks| filter:search.value">
+      <img ng-src="../www/img/student.png"> 
+	  <h2 >Name	: {{student.studentName}}</h2>
+       <h2 >Mobile No :{{student.homeMobileNumber}}</h2>
+       <h2 >Roll   No :{{student.rollNumber}}</h2>
+	   <!-- <img src="../www/img/Jayakumar.jpg" > -->
+		</a>	
+     </div>      
     </ion-list>
   </ion-content>
 </ion-view>

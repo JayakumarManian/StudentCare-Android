@@ -1,0 +1,18 @@
+<ion-view view-title="Attendance List" >
+  <ion-content ng-controller="AppCtrl">
+    <ion-list>
+       <div>
+	  <a class="item item-avatar item-thumbnail-left" nav-transition="android"  ng-repeat="attendance in attendance| filter:search.value">
+	  <img src="../www/img/student.png"> 
+	  <h2 >Roll Number	: {{attendance.rollNumber}}</h2>
+       <h2 >Date :{{attendance.date}}</h2>
+       <h2 >Check_in Time :{{attendance.checkin}}</h2>
+       <h2 >Check_Out Time :{{attendance.checkout}}</h2>
+		</a>	
+     </div> 
+<div  ng-repeat="auth in auth">
+<h2>{{auth.username}}</h2>
+</div>	 
+    </ion-list>
+  </ion-content>
+</ion-view>

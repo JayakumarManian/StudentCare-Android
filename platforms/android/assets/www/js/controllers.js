@@ -1,9 +1,12 @@
 angular.module('starter.controllers', ['ionic', 'ngCordova'])
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $http,$ionicLoading) {
+
+.controller('AppCtrl', function($scope, $ionicModal, $http,$ionicLoading,$state, Auth) {
+
  
+
 $scope.show = function() {
     $ionicLoading.show({
-      template: '<p><ion-spinner class="spinner-balanced" icon="lines"></ion-spinner>Loading...</p>'
+      template: '<p><ion-spinner class="spinner-balanced" icon="bubbles"></ion-spinner>Loading...</p>'
       
     });
   };
@@ -11,6 +14,8 @@ $scope.show = function() {
     $ionicLoading.hide();
   };
   getTask();
+  getAttendance();
+  getAuth();
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -19,68 +24,98 @@ $scope.show = function() {
   //});
   
   // Form data for the login modal
-  $scope.loginData = {};
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
-
+ 
    function getTask(){ 	 
 	$scope.show(); 
-	$http.post("http://smartplough.com/MobileService/getTask.php").success(function(data){
+	$http.post("http://smartplough.com/MobileService/getitem.php").success(function(data){
 	$scope.hide();
-    $scope.tasks = data;	 
+    $scope.tasks = data;	
+	/* $http.post("http://smartplough.com/MobileService/getAttendance.php").success(function(data){
+    $scope.attendance = data;	 
+       }); */	
+       });
+  };
+  
+    function getAttendance(){ 	 
+	$scope.show(); 
+	$http.post("http://smartplough.com/MobileService/getAttendance.php").success(function(data){
+	 
+	$scope.hide();
+    $scope.attendance = data;	 
+       });
+  };
+    function getAuth(){ 	 
+	$http.post("http://smartplough.com/MobileService/getAuth.php").success(function(data){
+    $scope.auth = data;	 
+	console.log('test',auth.username);
        });
   };
   
    $scope.addTask = function (task) {
-  
-    $http.post("http://smartplough.com/MobileService/addTask.php?task="+task).success(function(data){
+    $http.post("http://smartplough.com/MobileService/additem.php?task="+task).success(function(data){
         getTask();
         $scope.taskInput = "";
       });
   };
-   $scope.upadeStatus = function(rollNo) {
-   // console.log('MJK_01',rollNo);
+   $scope.checkin = function(rollNo) {
+   console.log('MJK_01',rollNo);
 		var roll=rollNo.split(",");
 		var mjk=roll[0];
-      $http.post("http://smartplough.com/MobileService/updateTask.php?rollNo="+mjk).success(function(data){
-	 // console.log('MJK_01',roll[0]);
-	
+      $http.post("http://smartplough.com/MobileService/checkin.php?rollNo="+mjk).success(function(data){
+	  console.log('MJK_01',roll[0]);
         getTask();
-		
+      });
+  };
+    $scope.checkout = function(rollNo) {
+   console.log('MJK_01',rollNo);
+		var roll=rollNo.split(",");
+		var mjk=roll[0];
+      $http.post("http://smartplough.com/MobileService/checkout.php?rollNo="+mjk).success(function(data){
+	  console.log('MJK_01',roll[0]);
+        getTask();
       });
   };
   // Perform the login action when the user submits the login form
+   $scope.loginData = {};  
+
+  $scope.logout = function() {
+    Auth.logout();
+    $state.go("login");
+  };
+
+
+   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
+
+    if(!angular.isDefined($scope.loginData.username) || !angular.isDefined($scope.loginData.password) || $scope.loginData.username.trim() == "" || $scope.loginData.password.trim() == ""){
+       alert("Enter both user name and password");
+       return;
+    }  
+
+    Auth.setUser({
+      username: $scope.loginData.username
+	 
+    });
+
+    $state.go("app.playlists");
+      };
+
+})
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
-    $timeout(function() {
+/*     $timeout(function() {
       $scope.closeLogin();
     }, 1000);
   };
-})
+}) */
 .controller("Barcode", function($scope, $cordovaBarcodeScanner) {
  
     $scope.scanBarcode = function() {
         $cordovaBarcodeScanner.scan().then(function(imageData) {
             alert(imageData.text);
 			$scope.scannedData=imageData.text;
+			
             console.log("Barcode Format -> " + imageData.format);
             console.log("Cancelled -> " + imageData.cancelled);
         }, function(error) {
@@ -90,6 +125,9 @@ $scope.show = function() {
  
 })
 
+
+
+ 
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
@@ -102,6 +140,8 @@ $scope.show = function() {
   ];
 })
 
+
+ 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
 

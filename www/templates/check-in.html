@@ -1,0 +1,36 @@
+<ion-view view-title="Check-in" >
+  <ion-content ng-controller= "Barcode" class="padding"> 
+    <div class="padding">
+	<div class="button-bar">
+  <a class="button button-balanced ion-camera" ng-click="scanBarcode()"> Scan</a>
+  <a class="button button-assertive ion-android-done" type="submit" ng-click="checkin(scannedData)"> Update</a>
+ 
+</div>
+	
+	<div class="card">
+  <div class="item item-divider ion-university item-icon-left item-dark">
+    St.Antony's school
+  </div>
+ 
+  <div class="item item-text-wrap item-stable">
+   <div class="item-thumbnail-left" >
+  <img src="../www/img/Jayakumar.jpg" > 
+  <h4>Name:{{scannedData.split(',')[0]}}</h4>
+  <h4>Roll No:{{scannedData.split(',')[1]}}</h4>
+  <h4>Mobile:{{scannedData.split(',')[2]}}</h6>
+  </div>
+  
+  </div>
+  <div class="item item-divider ion-android-home item-icon-left item-dark">
+   Perungalathur,chennai-600063
+  </div>
+</div>
+
+	</div>
+	<div class="padding">
+	
+      </ion-item>
+  </ion-content>
+</ion-view>
+
+        

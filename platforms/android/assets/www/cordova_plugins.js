@@ -40,7 +40,8 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-camera": "1.2.1-dev",
-    "com.phonegap.plugins.barcodescanner": "2.2.0"
+    "com.phonegap.plugins.barcodescanner": "2.2.0",
+    "cordova-plugin-geolocation": "1.0.1"
 }
 // BOTTOM OF METADATA
 });
