@@ -15,6 +15,14 @@
                         {
                             "xml": "<feature name=\"BarcodeScanner\"><param name=\"android-package\" value=\"com.phonegap.plugins.barcodescanner.BarcodeScanner\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -557,6 +565,15 @@
             "PACKAGE_NAME": "com.csscorp.ex"
         },
         "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.csscorp.ex"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.csscorp.ex"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.csscorp.ex"
+        },
+        "com.ionic.keyboard": {
             "PACKAGE_NAME": "com.csscorp.ex"
         }
     },

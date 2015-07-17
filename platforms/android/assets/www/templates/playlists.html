@@ -1,4 +1,4 @@
-<ion-view view-title="Studentlists" >
+<ion-view view-title="Student Master list" >
   <ion-content >
 <div class="bar bar-header item-input-inset">
   <label class="item-input-wrapper">
@@ -9,17 +9,19 @@
     Cancel
   </button>
 </div>
-    <ion-list ">
-     <!--  <ion-item nav-transition="android"  ng-repeat="student in tasks| filter:search.value" href="#/app/playlists/{{student.rollNumber}}">   -->
-       <div>
-	  <a class="item item-avatar item-thumbnail-left" nav-transition="android"  ng-repeat="student in tasks| filter:search.value">
-      <img ng-src="../www/img/student.png"> 
-	  <h2 >Name	: {{student.studentName}}</h2>
-       <h2 >Mobile No :{{student.homeMobileNumber}}</h2>
-       <h2 >Roll   No :{{student.rollNumber}}</h2>
-	   <!-- <img src="../www/img/Jayakumar.jpg" > -->
-		</a>	
-     </div>      
+    <ion-list  show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+	<ion-item ng-repeat="student in tasks" class="item item-avatar item-thumbnail-left">
+	<img ng-src={{student.picture}}> 
+	<h2>{{student.studentName}}</h2>
+    <p>{{student.rollNumber}}</p>
+    <p>{{student.address}}</p>
+    <ion-option-button class="button-assertive icon-left ion-ios-telephone" ng-click="">
+      Call
+    </ion-option-button>
+	<ion-option-button class="button-balanced icon-left ion-android-textsms" ng-click="">
+      SMS
+    </ion-option-button>
+	</ion-item>	 
     </ion-list>
   </ion-content>
 </ion-view>

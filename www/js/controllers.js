@@ -1,6 +1,7 @@
 angular.module('starter.controllers', ['ionic', 'ngCordova'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $http,$ionicLoading,$state, Auth) {
+.controller('AppCtrl', function($scope, $ionicModal, $http,$ionicPopup,$ionicLoading,$state, Auth) {
+
 
  
 
@@ -62,6 +63,10 @@ $scope.show = function() {
 		var roll=rollNo.split(",");
 		var mjk=roll[0];
       $http.post("http://smartplough.com/MobileService/checkin.php?rollNo="+mjk).success(function(data){
+	   $ionicPopup.alert({
+              title: 'Success',
+             /*  content: 'Sucessfully updated' */
+            })
 	  console.log('MJK_01',roll[0]);
         getTask();
       });
@@ -71,6 +76,10 @@ $scope.show = function() {
 		var roll=rollNo.split(",");
 		var mjk=roll[0];
       $http.post("http://smartplough.com/MobileService/checkout.php?rollNo="+mjk).success(function(data){
+	  $ionicPopup.alert({
+              title: 'Success',
+             /*  content: 'Sucessfully updated' */
+            })
 	  console.log('MJK_01',roll[0]);
         getTask();
       });
@@ -83,6 +92,14 @@ $scope.show = function() {
     $state.go("login");
   };
 
+  $scope.showAlert = function() {
+            $ionicPopup.alert({
+              title: 'Success',
+              content: 'Hello World!!!'
+            }).then(function(res) {
+              console.log('Test Alert Box');
+            });
+          };
 
    // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
@@ -96,8 +113,9 @@ $scope.show = function() {
       username: $scope.loginData.username
 	 
     });
-
+/* if($scope.loginData.username==$scope.auth.username){ */
     $state.go("app.playlists");
+	
       };
 
 })
@@ -129,15 +147,10 @@ $scope.show = function() {
 
  
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Jayakumar', id: 1 },
-    { title: 'Aravind', id: 2 },
-    { title: 'Sree', id: 3 },
-    { title: 'Selva', id: 4 },
-    { title: 'Ramesh', id: 5 },
-    { title: 'Robert', id: 6 }
-  ];
+.controller('PlaylistsCtrl',function($scope) {
+ $scope.shouldShowDelete = false;
+ $scope.shouldShowReorder = false;
+ $scope.listCanSwipe = true
 })
 
 

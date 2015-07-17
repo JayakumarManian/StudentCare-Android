@@ -209,8 +209,13 @@ D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\lib\ionic\scss\ionicons\_ionicons-font.scss \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\lib\ionic\scss\ionicons\_ionicons-icons.scss \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\lib\ionic\scss\ionicons\_ionicons-variables.scss \
+D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\com.ionic.keyboard \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-camera \
+D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-console \
+D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-device \
+D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\com.ionic.keyboard\www \
+D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\com.ionic.keyboard\www\keyboard.js \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner\www \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner\www\barcodescanner.js \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-camera\www \
@@ -218,6 +223,11 @@ D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-camera\www\CameraConstants.js \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-camera\www\CameraPopoverHandle.js \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-camera\www\CameraPopoverOptions.js \
+D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-console\www \
+D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-console\www\console-via-logger.js \
+D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-console\www\logger.js \
+D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-device\www \
+D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\plugins\cordova-plugin-device\www\device.js \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\res\icon \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\res\res \
 D:\Student Tracking System\PhonegapDesktop\StudentCare-Android\platforms\android\assets\www\res\screen \

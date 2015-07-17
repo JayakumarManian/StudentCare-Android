@@ -21,19 +21,23 @@
        <!--  <ion-item class="item-dark " menu-close ng-click="login()">
           Login
         </ion-item> -->
-        <ion-item class="item-dark"  menu-close href="#/app/check-in">
-          Check-in
+        <ion-item  menu-close class="item-dark item-icon-left " href="#/app/check-in">
+          <i class="icon ion-android-checkmark-circle"></i>Check-in
         </ion-item> 
-		<ion-item class="item-dark" menu-close href="#/app/check-out">
+		<ion-item class="item-dark item-icon-left" menu-close href="#/app/check-out">
+		<i class="icon ion-ios-close-outline"></i>
           Check-out
         </ion-item>
-        <ion-item class="item-dark" menu-close href="#/app/attendancelist">
-          Attendance List
+        <ion-item class="item-dark item-icon-left" menu-close href="#/app/attendancelist">
+		<i class="icon ion-ios-list-outline"></i>
+          Check in/out Log
         </ion-item>
-        <ion-item class="item-dark"  menu-close href="#/app/playlists">
-          Student List
+        <ion-item class="item-dark item-icon-left"  menu-close href="#/app/playlists">
+		<i class="icon ion-android-list"></i>
+          Student Master List
         </ion-item>
-		<ion-item nav-clear menu-close class="item-dark" ng-click="logout()">
+		<ion-item nav-clear menu-close class="item-dark item-icon-left" ng-click="logout()">
+		<i class="icon ion-log-out"></i>
           Logout
         </ion-item>
       </ion-list>
